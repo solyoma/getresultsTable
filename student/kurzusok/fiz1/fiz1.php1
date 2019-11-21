@@ -1,0 +1,111 @@
+<?php 
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--' oldalak.css adja meg az oldalak kinézetét -->
+    <link rel="stylesheet" type="text/css" href="../../oldalak.css" />
+
+    <?php 
+    // ================================================================
+    // Innentől kezdve a <head> -ba másolni:
+    //       a ../../ a fájlok e könyvtárhoz képesti relatív útvonala
+    // ha ezt megváltoztatjuk akkor a 'getResultsTable.js' fájlban
+    // is meg kell változtassuk a 'getResultsTable.php' átvonalát
+    ?>
+    <script type="text/JavaScript" src="../../zoneajax.js"></script>
+    <script type="text/JavaScript" src="../../getResultsTable.js"></script>
+    
+    <?php
+        // getResultsTable.css adja meg a táblázat kinézetét
+    ?> 
+    <link rel="stylesheet" type="text/css" href="../../getResultsTable.css" />
+ <?php
+    // a fiz1.js fájlban vannak a táblázatok adatai 
+    // ez valószínűleg más minden tárgyhoz
+ ?> 
+    <script type="text/JavaScript" src="fiz1.js"></script>
+ <?php
+    // --------------- idáig --------------------------------------------    
+ ?>
+</head>
+
+<body>
+<div class="spacer"></div>
+<div class="kozepre"> 
+
+    <h1>Példa a getResultsTable használatára</h1>
+
+    <?php   
+        // Jó, ha a hallgató ezeket látja, de ezek nem szükségesek 
+    ?>
+    <div class="lastchg">Utolsó változtatás&nbsp;&nbsp;2019. nov. 11.</div><br>
+    <div>
+    Gyakorlatok helye és ideje:
+    <div style="margin-left:1cm">E407, Hétfő 15:00-16:30<br>
+        szept. 16., szept. 30., okt.14., okt.28., nov. 11, nov. 25., dec. 9.
+    </div>
+    </div> 
+    <p>Gyak. vez.: Dr. Nemoda Buda,</p>
+    <p class="indented">Kiváló Tanszék <br>
+                Remek épület 3. em. 345.
+    </p>
+
+    <?php /* ------------------ pl. kurzus információ, stb ----------------*/ ?>
+    <h2 >Kurzus információk</h2>
+    <p>A gyakorlatok 70%-án kötelező részt venni. a részvételt minden alkalommal - az óra végén - ellenőrzöm.</p>
+    <p>A szorgalmi időszakban a harmadik héttől kezdődően  5 kis zh-t és 1 nagy ZH lesz. A kis ZH-k anyaga az előző 
+    gyakorlat anyagából áll.<br>
+    
+    Három, 2 pont (40%) feletti kis ZH szükséges az aláíráshoz.</p>
+    <br>
+    <p class="yellow">Sikertelen ZH- pótlása</p>
+    <p>A kis zh-k (maximum 3 db) a pót nagy zh alkalomtól eltérő időpontban pótolhatók. A pótlás alkalmával minden
+    hallgató annyiszor 12 percet ír, ahány kis zh-t szeretne pótolni. A sikeres Fizika felmérő megfelel 
+    egy sikeres kis zh-nak!</p>
+
+<?php 
+    // ================================================================
+    // Jelenléti lista
+    // Innentől kezdve a <body> -ba másolni. 
+    // a táblázat neve ugyanaz, mint ami a fiz1.js-ben!
+?>
+<h2 >Jelenlét</h2>
+<?php /* ------------------ az adat bekérő kód ----------------*/ ?>
+ <span>Neptun:</span> 
+ <input name="neptun-a" id="neptun-a" type=text size=6 value="" onkeyup="_keyPressedInPasswordField(attendance_table)"> 
+ <input type="button" id="clear-a" value="Törlés" onclick="clearMarks(attendance_table)"> 
+          
+ <div name="marks-a" id="marks-a"><br>Írja be a Neptun kódját!
+ </div><br>
+
+<h2>ZH pontszámok</h2>
+<div><span class="yellow">Ponthatárok</span>
+    <table style="border:0; width:200px;">
+    <thead>
+        <tr><th>Pont</th><th>Jegy</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>0..39</td><td>1</td></tr>
+        <tr><td>40..54</td><td>2</td></tr>
+        <tr><td>55..70</td><td>3</td></tr>
+        <tr><td>70..84</td><td>4</td></tr>
+        <tr><td>85..</td><td>5</td></tr>
+    </tbody>
+    </table>
+</div><br>
+
+<span>Neptun:</span> 
+ <input name="neptun" id="neptun" type=text size=6 value="" onkeyup="_keyPressedInPasswordField(results_table)"> 
+ <input type="button" id="clear" value="Törlés" onclick="clearMarks(results_table)"> 
+          
+ <div name="marks" id="marks"><br>Írja be a Neptun kódját!</div><br>
+ <?php 
+//=======================================================================================  
+?>
+<!-- kozepre vege -->
+</div>
+</body>
+</html>

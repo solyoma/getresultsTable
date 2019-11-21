@@ -1,0 +1,39 @@
+/* Az eredmény táblázat kinézete.
+  Mobil first
+ */
+.neptun { color:white; width:100px; text-align:left; padding-left:5px; font-family:"Courier New",Courier;}
+.mark   { color:gray;}
+.emark  { color:red;}
+.rmark  { font-weight:bold; color:red;}
+.opont  { color:red;}
+.graybg { font-weight:bold; background-color:333;}
+.yellow {color:yellow;}
+.yellow:hover { text-decoration: underline wavy yellow; }
+.detail { color:#008800; width:400px;}
+.table {
+  overflow:auto;
+}
+.restab { 
+  border-width:1px; 
+  border-spacing:0px; 
+  border-style:inset; 
+  border-collapse:collapse;
+}
+
+@media only screen and (min-width:1000px) {
+  .restab {
+   max-width:90%;
+  }
+}
+
+.absent { color:red;}
+.present { color:gray;}
+.center { width:100%; max-width:600px; text-align:center; }
+.erow   
+{ 
+  /* default fallback */
+  background-color: rgb(213, 238, 213) ;
+  /* nice browsers */
+  background-color: rgba(213, 238, 213, 0.1);
+  /* background: #D5EED5; filter: */
+}

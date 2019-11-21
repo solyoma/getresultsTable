@@ -1,0 +1,93 @@
+/* Ez a fájl írja le az oldal tulajdonságait */
+
+*, *::before, *::after { 
+    padding:0; 
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    background:#00001A;
+}
+
+.kozepre {
+    background:#aaaabb;
+    color:#0030A0;
+    width : 100vw;
+}
+
+p {
+ width:90%;
+ margin-left:1em;
+}
+
+h1 {
+  margin:auto;
+}
+
+h2 {
+ margin-left:1em;
+}
+
+th {
+    border-right-width:1px;
+    border-right-style:inset; 
+    border-bottom-style:solid;
+    background-color:rgba(213,235,213,0.2)
+}
+td {
+    border-right-width:1px;
+    border-right-style:inset;
+    text-align:center; 
+    padding:5px;
+}
+td.bal { text-align:left;}
+
+
+.enhance { color:yellow;}
+/* Tooltip container */
+.tooltip {
+ position: relative;
+ display: inline-block;
+ border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+ background:#30A030;
+ color:#002c00;
+ font-weight:700;
+}
+	
+/* Tooltip text */
+.tooltip .tooltiptext {
+   visibility: hidden;
+   width: 320px;
+   background-color: #002a00;
+   color: #fff;
+   text-align: center;
+   padding: 5px 0;
+   border-radius: 6px;
+   border-color:white;
+   border-width:2px;
+   								 
+   position: absolute;
+   z-index: 1;
+}
+											 
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media only screen and (min-width:800px) {
+
+  .spacer {
+      height:50px;
+   }
+
+    .kozepre {
+        width : 90%;
+        margin:auto;
+    }
+    
+    p {
+     width:600px;;
+    }
+}
